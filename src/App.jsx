@@ -12,7 +12,8 @@ export const App = () => {
   const onChangeTodoText = (event) => setTodoText(event.target.value);
 
   const onClickAdd = () => {
-    alert(todoText);
+    const newTodos = [...incompleteTodos, todoText];
+    setIncompleteTodos(newTodos);
   };
   return (
     <>
