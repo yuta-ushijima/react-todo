@@ -31,6 +31,10 @@ export const App = () => {
     setIncompleteTodos(newIncompleteTodos);
     setCompleteTodos(newCompleteTodos);
   };
+
+  const onClickBack = (index) => {
+    alert(index);
+  };
   return (
     <>
       <div className="input-area">
@@ -60,12 +64,12 @@ export const App = () => {
       <div className="complete-area">
         <p className="title">完了のTODO</p>
         <ul>
-          {completeTodos.map((todo) => {
+          {completeTodos.map((todo, index) => {
             return (
               <li>
                 <div key={todo} className="list-row">
                   {todo}
-                  <button>戻す</button>
+                  <button onClick={() => onClickBack(index)}>戻す</button>
                 </div>
               </li>
             );
