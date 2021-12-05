@@ -6,6 +6,7 @@ export const App = () => {
     "あああああ",
     "いいいいい"
   ]);
+  const [completeTodos, setCompleteTodos] = useState(["うううう"]);
   return (
     <>
       <div className="input-area">
@@ -31,12 +32,16 @@ export const App = () => {
       <div className="complete-area">
         <p className="title">完了のTODO</p>
         <ul>
-          <li>
-            <div className="list-row">
-              うううう
-              <button>戻す</button>
-            </div>
-          </li>
+          {completeTodos.map((todo) => {
+            return (
+              <li>
+                <div key={todo} className="list-row">
+                  {todo}
+                  <button>戻す</button>
+                </div>
+              </li>
+            );
+          })}
         </ul>
       </div>
     </>
